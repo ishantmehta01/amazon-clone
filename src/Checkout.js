@@ -9,22 +9,22 @@ function Checkout() {
     return (
         <div className="checkout">
             <div className="checkout__left">
-                <img alt="" className="checkout__ad" src="https://m.media-amazon.com/images/G/31/AMS/IN/970X250-_desktop_banner.jpg"/>
+                <img alt="" className="checkout__ad" src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"/>
                 {/* // Shopping Cart */}
-                <h2 className="checkout__title">Shopping Cart</h2>
+                {basket.length ? <h2 className="checkout__title">Shopping Cart</h2> : null }
                 {
                     basket.length ? (
                         basket.map(item => <CheckoutProduct {...item}/>)
                     ) : (
                     <div>
                         <h2>Your Shopping Cart is empty.</h2>
-                        <p>Your Shopping Cart lives to serve. Give it purpose — fill it with books, CDs, DVDs, toys, electronics, and more.</p>
+                        <p>You have no items in your basket. To buy one or more items, click "Add to basket" next to the item.</p>
                     </div>
                     )
                 }
             </div>
             <div className="checkout__right">
-                <Subtotal />
+                {basket.length ? <Subtotal /> : null}
             </div>        
         </div>
     )

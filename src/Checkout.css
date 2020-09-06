@@ -8,10 +8,15 @@
 
 .checkout__ad {
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .checkout__title {
     margin-bottom: 10px;
     padding: 10px;
     border-bottom: 1px solid lightgray;
+}
+
+.checkout__right {
+    margin-left: 20px;
 }
