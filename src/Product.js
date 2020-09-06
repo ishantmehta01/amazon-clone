@@ -6,7 +6,7 @@ import { ACTION_TYPES } from './reducer';
 function Product({
     id, title, img, price, rating
 }) {
-    const [{ basket }, dispatch] = useStateValue()
+    const [, dispatch] = useStateValue()
     const handleAdd = () => {
         dispatch({
             type: ACTION_TYPES.AdD_TO_BASKET,

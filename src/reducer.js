@@ -1,16 +1,17 @@
 export const initialState = {
-    basket: []
+    basket: [],
+    user: null
 }
 
 export const getTotalPrice = (basket) => basket.reduce((accum, item) => {
     accum = accum + Number(item.price);
-    debugger
     return accum
 }, 0)
 
 export const ACTION_TYPES = {
     AdD_TO_BASKET: 'AdD_TO_BASKET',
-    REMOVE_FROM_BASKET: 'REMOVE_FROM_BASKET'
+    REMOVE_FROM_BASKET: 'REMOVE_FROM_BASKET',
+    SET_USER: 'SET_USER'
 }
 
 function reducer(state, action){
@@ -33,7 +34,12 @@ function reducer(state, action){
                 ...state,
                 basket: newBasket
             }
-                
+               
+        case ACTION_TYPES.SET_USER:
+            return {
+                ...state,
+                user: action.user
+            }
         default:
             return state
     }
